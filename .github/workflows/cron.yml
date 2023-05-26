@@ -1,14 +1,14 @@
 on:
   schedule:
-    - cron: '*/5 * * * *'
+  - cron: '*/5 * * * *'
 
 jobs:
   check_balance_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Check Balance
-        run: python desco.py
-        env:
-          DESCO_PREPAID_ACCOUNT_ID: ${{ secrets.DESCO_PREPAID_ACCOUNT_ID }}
-          EMAIL_USER: ${{ secrets.EMAIL_USER }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+    - uses: actions/checkout@v2
+    - run: python desco.py
+      env:
+        DESCO_PREPAID_ACCOUNT_ID: ${{ secrets.DESCO_PREPAID_ACCOUNT_ID }}
+        EMAIL_USER: ${{ secrets.EMAIL_USER }}
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
