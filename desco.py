@@ -8,7 +8,7 @@ DESCO_PREPAID_ACCOUNT_ID = os.getenv('DESCO_PREPAID_ACCOUNT_ID')
 EMAIL_USER = os.getenv('EMAIL_USER')
 EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
 
-respose = requests.get("https://prepaid.desco.org.bd/api/tkdes/customer/getBalance?accountNo=" + DESCO_PREPAID_ACCOUNT_ID)
+respose = requests.get("https://prepaid.desco.org.bd/api/tkdes/customer/getBalance?accountNo=" + DESCO_PREPAID_ACCOUNT_ID, verify=False)
 
 balance = respose.json()['data']['balance']
 
