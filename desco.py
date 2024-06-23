@@ -4,9 +4,13 @@ import smtplib, ssl, requests
 import os
 
 DESCO_PREPAID_ACCOUNT_ID = os.getenv('DESCO_PREPAID_ACCOUNT_ID')
+DESCO_PREPAID_USER_EMAIL = os.getenv('DESCO_PREPAID_USER_EMAIL')
 
-EMAIL_USER = os.getenv('EMAIL_USER')
-EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
+SMTP_FROM_EMAIL = os.getenv('SMTP_FROM_EMAIL')
+SMTP_HOST = os.getenv('SMTP_HOST')
+SMTP_PORT = os.getenv('SMTP_PORT')
+SMTP_PASSWORD = os.getenv('SMTP_PASSWORD')
+SMTP_USER = os.getenv('SMTP_USER')
 
 respose = requests.get("https://prepaid.desco.org.bd/api/tkdes/customer/getBalance?accountNo=" + DESCO_PREPAID_ACCOUNT_ID, verify=False)
 
@@ -18,6 +22,6 @@ Subject: Desco Prepaid Balance {balance} Tk
 """
 
 context = ssl.create_default_context()
-with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-    server.login(EMAIL_USER, EMAIL_PASSWORD)
-    server.sendmail(EMAIL_USER, EMAIL_USER, message)
+with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=context) as server:
+    server.login(SMTP_USER, SMTP_PASSWORD)
+    server.sendmail(SMTP_FROM_EMAIL, DESCO_PREPAID_USER_EMAIL, message)
