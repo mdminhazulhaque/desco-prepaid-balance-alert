@@ -3,8 +3,8 @@
 import os, sys
 import smtplib, requests
 
-from email.MIMEMultipart import MIMEMultipart
-from email.MIMEText import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 DESCO_PREPAID_ACCOUNT_ID = os.getenv('DESCO_PREPAID_ACCOUNT_ID')
 DESCO_PREPAID_USER_EMAIL = os.getenv('DESCO_PREPAID_USER_EMAIL')
