@@ -23,5 +23,7 @@ Subject: Desco Prepaid Balance {balance} Tk
 
 context = ssl.create_default_context()
 with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=context) as server:
+    server.ehlo()
+    server.starttls()
     server.login(SMTP_USER, SMTP_PASSWORD)
     server.sendmail(SMTP_FROM_EMAIL, DESCO_PREPAID_USER_EMAIL, message)
