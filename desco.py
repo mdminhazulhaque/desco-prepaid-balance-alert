@@ -34,7 +34,7 @@ msg.attach(MIMEText(body, 'plain'))
 
 # fire
 server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
-server.starttls()
+# server.starttls()
 server.login(SMTP_USER, SMTP_PASSWORD)
 text = msg.as_string()
 server.sendmail(SMTP_FROM_EMAIL, DESCO_PREPAID_USER_EMAIL, text)
