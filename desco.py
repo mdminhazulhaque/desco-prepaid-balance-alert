@@ -26,7 +26,7 @@ msg['To'] = DESCO_PREPAID_USER_EMAIL
 msg['Subject'] = "Desco Prepaid Balance: {} Tk".format(balance)
 
 body = """
-Desco Prepaid Balance: {} Tk"
+Desco Prepaid Balance: {} Tk
 
 """.format(balance)
 
@@ -34,7 +34,7 @@ msg.attach(MIMEText(body, 'plain'))
 
 # fire
 server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
-# server.starttls()
+server.starttls()
 server.login(SMTP_USER, SMTP_PASSWORD)
 text = msg.as_string()
 server.sendmail(SMTP_FROM_EMAIL, DESCO_PREPAID_USER_EMAIL, text)
