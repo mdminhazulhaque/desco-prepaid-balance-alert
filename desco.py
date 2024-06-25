@@ -33,7 +33,7 @@ Desco Prepaid Balance: {} Tk
 msg.attach(MIMEText(body, 'plain'))
 
 # fire
-server = smtplib.SMTP(F"{SMTP_HOST}:{SMTP_PORT}")
+server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
 server.ehlo()
 server.starttls()
 server.login(SMTP_USER, SMTP_PASSWORD)
