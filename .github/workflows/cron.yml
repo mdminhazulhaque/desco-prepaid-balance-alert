@@ -16,5 +16,17 @@ jobs:
     - run: python desco.py
       env:
         DESCO_PREPAID_ACCOUNT_ID: ${{ secrets.DESCO_PREPAID_ACCOUNT_ID }}
-        EMAIL_USER: ${{ secrets.EMAIL_USER }}
-        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        DESCO_PREPAID_USER_EMAIL: ${{ secrets.DESCO_PREPAID_USER_EMAIL }}
+        SMTP_FROM_EMAIL: ${{ secrets.SMTP_FROM_EMAIL }}
+        SMTP_HOST: ${{ secrets.SMTP_PASSWORD }}
+        SMTP_PORT: ${{ secrets.SMTP_PORT }}
+        SMTP_USER: ${{ secrets.SMTP_USER }}
+        SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        
+
+
+
+
+
+
+
