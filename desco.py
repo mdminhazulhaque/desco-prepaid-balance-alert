@@ -34,6 +34,7 @@ msg.attach(MIMEText(body, 'plain'))
 
 # fire
 server = smtplib.SMTP(SMTP_HOST, SMTP_PORT)
+server.connect()
 server.ehlo()
 server.starttls()
 server.login(SMTP_USER, SMTP_PASSWORD)
