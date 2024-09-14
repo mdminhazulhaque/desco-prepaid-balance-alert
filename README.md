@@ -1,3 +1,9 @@
+# Desco Prepaid Balance Alert
+
+Get Desco Prepaid Balance delivered to your mailbox via CronJob/Schedule.
+
+![Desco Prepaid Balance Checker](<diag.png>)
+
 ## Configure
 
 Export the following variables.
@@ -12,4 +18,8 @@ export SMTP_PORT=587
 export SMTP_USER=you@gmail.com
 ```
 
-![Desco Prepaid Balance Checker](<diag.png>)
+Then run
+
+```
+python3 desco.py
+```
